@@ -27,6 +27,7 @@ namespace Challenge02
 
             string userName = null;
             string userPasscode = null;
+            bool correctCode = false;
 
             // Begining program
 
@@ -34,18 +35,22 @@ namespace Challenge02
             Console.WriteLine(prompts[1]);
             userName= Console.ReadLine();
 
-            Console.WriteLine(prompts[2]);
-            userPasscode= Console.ReadLine();
+            while (correctCode != true)
+            {
+                Console.WriteLine(prompts[2]);
+                userPasscode = Console.ReadLine();
 
-            // passcode logic
-            if(userPasscode != correctPasscode)
-            {
-                Console.WriteLine(passcodeAnswers[1]);
+                // passcode logic
+                if (userPasscode != correctPasscode)
+                {
+                    Console.WriteLine(passcodeAnswers[1]);
+                }
+                else
+                {
+                    correctCode= true;
+                }
             }
-            else
-            {
-                Console.WriteLine(passcodeAnswers[0]);
-            }
+            Console.WriteLine(passcodeAnswers[0]); 
         }
     }
 }
