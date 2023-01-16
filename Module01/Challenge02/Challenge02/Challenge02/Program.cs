@@ -27,7 +27,10 @@ namespace Challenge02
 
             string userName = null;
             string userPasscode = null;
+            string newPasscode = "";
+            string userAnswer = "";
             bool correctCode = false;
+            bool newCodeCorrect = false;
 
             // Begining program
 
@@ -50,7 +53,35 @@ namespace Challenge02
                     correctCode= true;
                 }
             }
-            Console.WriteLine(passcodeAnswers[0]); 
+            Console.WriteLine(passcodeAnswers[0]);
+
+            Console.WriteLine("Would you like to change your passcode?\n Type 'y' for yes. \n Type 'n' for no.");
+            userAnswer = Console.ReadLine().ToLower();
+
+            if(userAnswer == "y")
+            {
+                Console.WriteLine("Please enter a new passcode:\n");
+                newPasscode = Console.ReadLine();
+
+                while(newCodeCorrect!= true)
+                {
+                    Console.WriteLine("Please Re-enter new passocde to confirm:\n");
+                    var newPCode = Console.ReadLine();
+
+                    if(newPCode == newPasscode)
+                    {
+                        newCodeCorrect = true;
+                    }
+                }
+
+                Console.WriteLine("New passcode has been set!");
+                
+            }
+            else
+            {
+                Console.WriteLine("A new passcode will not be set.\n Thank You.");
+            }
+            
         }
     }
 }
