@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApp1
+namespace Challenge01
 {
     internal class Program
     {
